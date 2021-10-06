@@ -33,6 +33,7 @@ import logging
 import os
 import asyncio
 import beeline
+from beeline.middleware.flask import HoneyMiddleware
 
 
 beeline.init(
@@ -61,6 +62,7 @@ requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.DEBUG)
+HoneyMiddleware(app, db_events=False)
 
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
