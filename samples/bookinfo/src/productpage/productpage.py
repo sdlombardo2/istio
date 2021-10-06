@@ -38,10 +38,10 @@ from beeline.middleware.flask import HoneyMiddleware
 
 beeline.init(
     # Get this via https://ui.honeycomb.io/account after signing up for Honeycomb
-    writekey='f9e0f7c58be2dde4c878162daed00123',
+    writekey="f9e0f7c58be2dde4c878162daed00123",
     # The name of your app is a good choice to start with
-    dataset='Bookinfo',
-    service_name='productpage',
+    dataset="Bookinfo",
+    service_name="productpage",
     # debug=True, # defaults to False. if True, data doesn't get sent to Honeycomb
 )
 
