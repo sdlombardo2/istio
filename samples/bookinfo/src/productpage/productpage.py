@@ -157,7 +157,7 @@ def trace():
                 # rpc_tag = {tags.SPAN_KIND: tags.SPAN_KIND_RPC_SERVER}
                 span = tracer.start_span(
                     # operation_name='op', child_of=span_ctx, tags=rpc_tag
-                    operation_name='op', child_of=span_ctx
+                    operation_name='op'
                 )
             except Exception as e:
                 # We failed to create a context, possibly due to no
