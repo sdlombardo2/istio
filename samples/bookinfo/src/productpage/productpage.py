@@ -154,10 +154,9 @@ def trace():
                 # Note: this tag means that the span will *not* be
                 # a child span. It will use the incoming traceid and
                 # spanid. We do this to propagate the headers verbatim.
-                # rpc_tag = {tags.SPAN_KIND: tags.SPAN_KIND_RPC_SERVER}
+                rpc_tag = {tags.SPAN_KIND: tags.SPAN_KIND_RPC_SERVER}
                 span = tracer.start_span(
-                    # operation_name='op', child_of=span_ctx, tags=rpc_tag
-                    operation_name='op'
+                    operation_name='op', child_of=span_ctx, tags=rpc_tag
                 )
             except Exception as e:
                 # We failed to create a context, possibly due to no
