@@ -32,6 +32,17 @@ from json2html import *
 import logging
 import os
 import asyncio
+import beeline
+
+
+beeline.init(
+    # Get this via https://ui.honeycomb.io/account after signing up for Honeycomb
+    writekey='f9e0f7c58be2dde4c878162daed00123',
+    # The name of your app is a good choice to start with
+    dataset='Bookinfo',
+    service_name='productpage',
+    # debug=True, # defaults to False. if True, data doesn't get sent to Honeycomb
+)
 
 # These two lines enable debugging at httplib level (requests->urllib3->http.client)
 # You will see the REQUEST, including HEADERS and DATA, and RESPONSE with HEADERS but without DATA.
